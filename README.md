@@ -9,6 +9,10 @@ Generation · health · alerts for solar sites
   <a href="https://github.com/ramincsy/ramioo-showcase"><img src="https://img.shields.io/badge/ramioo-showcase-hub-111827?style=for-the-badge" alt="hub" /></a>
 </p>
 
+<p>
+  <a href="https://www.ramioo.com/projects/solar-intelligence"><img src="docs/card.jpg" alt="Solar plant monitoring" width="860" /></a>
+</p>
+
 <p><a href="https://www.ramioo.com/projects/solar-intelligence">https://www.ramioo.com/projects/solar-intelligence</a></p>
 
 </div>
