@@ -30,8 +30,8 @@
 | | |
 |:--|:--|
 | **Open demo** | [ramincsy.github.io/solar-monitoring-showcase](https://ramincsy.github.io/solar-monitoring-showcase/) |
-| What you get | Command center, Iran map with live MW, plant HMI, reports |
-| Controls | Click any shot · ← → · Esc |
+| What you get | Numbered tour: sign-in → command → plants → HMI → reports → audit |
+| Controls | Click any shot · ← → follows tour order · Esc |
 
 ---
 
@@ -43,13 +43,13 @@
 
 <p align="center"><b><a href="https://ramincsy.github.io/solar-monitoring-showcase/">Open the interactive catalog →</a></b></p>
 
-| Map | Live HMI | Reports |
+| Sign-in | Command | Reports |
 |:---:|:---:|:---:|
-| <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/03-map.png" width="280" alt="Iran map" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/06-live-hmi.png" width="280" alt="Live HMI" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/07-reports.png" width="280" alt="Reports" /></a> |
+| <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/01-login.png" width="280" alt="Sign-in" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/02-command.png" width="280" alt="Command" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/07-reports.png" width="280" alt="Reports" /></a> |
 
-| Plants | Alerts | Access |
+| Plants | Live HMI | Alerts |
 |:---:|:---:|:---:|
-| <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/04-plants.png" width="280" alt="Plants" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/08-alerts.png" width="280" alt="Alerts" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/01-login.png" width="280" alt="Sign-in" /></a> |
+| <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/04-plants.png" width="280" alt="Plants" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/06-live-hmi.png" width="280" alt="Live HMI" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/08-alerts.png" width="280" alt="Alerts" /></a> |
 
 ---
 
@@ -59,7 +59,7 @@ On-prem Persian/RTL console for multi-site photovoltaic plants. It **reads** Hua
 
 The public catalog is a **demo dataset** (Yazd / Kerman / Isfahan sample sites) so customer names and device addresses never appear.
 
-Surfaces in the live catalog: **Command · Map · Fleet · Live HMI · Reports · Access**
+Surfaces in the live catalog: **01 Sign-in · 02 Command · 03 Map · 04 Plants · 05 Plant · 06 HMI · 07 Reports · 08 Alerts · 09 Portals · 10 Users · 11 Audit**
 
 ---
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AftabPulse — Product Catalog | Solar Fleet Monitoring</title>
-  <meta name="description" content="Public demo catalog of AftabPulse — on-prem Huawei SmartLogger solar fleet monitoring. Screens use a fictional sample fleet; no customer sites or device IPs." />
+  <meta name="description" content="Numbered product tour of AftabPulse. Full-page screens of a fictional SmartLogger demo fleet — no customer sites or device IPs." />
   <meta name="theme-color" content="#0c1018" />
   <link rel="icon" type="image/svg+xml" href="brand-mark.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,25 +38,23 @@
     img { max-width: 100%; display: block; }
     .wrap { width: min(1180px, calc(100% - 36px)); margin-inline: auto; }
     .banner {
-      display: flex; gap: 14px; align-items: flex-start;
-      margin: 0 0 32px;
+      margin: 0 0 28px;
       padding: 14px 16px;
       border: 1px solid rgba(94, 234, 212, 0.28);
       background: rgba(94, 234, 212, 0.06);
       border-radius: 14px;
-      color: var(--text);
       font-size: 13.5px;
     }
     .banner b { color: var(--accent2); }
     header.hero {
-      padding: 88px 0 56px;
+      padding: 80px 0 52px;
       border-bottom: 1px solid var(--line);
       background:
         radial-gradient(900px 420px at 12% -20%, rgba(245, 158, 11, 0.16), transparent 55%),
         radial-gradient(700px 360px at 95% 0%, rgba(94, 234, 212, 0.10), transparent 50%),
         var(--bg2);
     }
-    .brand { display: flex; align-items: center; gap: 12px; margin: 0 0 28px; color: var(--accent); }
+    .brand { display: flex; align-items: center; gap: 12px; margin: 0 0 24px; color: var(--accent); }
     .brand svg { width: 36px; height: 36px; }
     .kicker {
       color: var(--accent);
@@ -64,18 +62,18 @@
       letter-spacing: 0.22em;
       font-weight: 600;
       text-transform: uppercase;
-      margin: 0 0 18px;
+      margin: 0 0 16px;
     }
     h1 {
-      font-size: clamp(30px, 4vw, 46px);
+      font-size: clamp(30px, 4vw, 44px);
       line-height: 1.15;
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       font-weight: 700;
       letter-spacing: -0.03em;
-      max-width: 20ch;
+      max-width: 22ch;
     }
-    .lede { color: var(--muted); font-size: 16.5px; line-height: 1.75; max-width: 680px; margin: 0 0 28px; }
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .lede { color: var(--muted); font-size: 16.5px; line-height: 1.75; max-width: 680px; margin: 0 0 24px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
     .stat {
       background: var(--card);
       border: 1px solid var(--line);
@@ -84,9 +82,28 @@
     }
     .stat b { display: block; font-size: 18px; font-weight: 700; color: var(--accent2); letter-spacing: -0.02em; }
     .stat span { color: var(--muted); font-size: 12.5px; }
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(11, minmax(0, 1fr));
+      gap: 6px;
+      margin: 0 0 8px;
+    }
+    .journey a {
+      display: flex; flex-direction: column; gap: 4px;
+      padding: 10px 8px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      min-height: 72px;
+    }
+    .journey a:hover { border-color: var(--accent); text-decoration: none; }
+    .journey small { color: var(--accent); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; }
+    .journey span { font-size: 11.5px; line-height: 1.35; color: var(--muted); }
     nav.toc {
       position: sticky; top: 0; z-index: 20;
-      background: rgba(7, 9, 13, 0.88);
+      background: rgba(7, 9, 13, 0.9);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(14px);
     }
@@ -95,23 +112,26 @@
       border: 1px solid var(--line);
       background: transparent;
       color: var(--text);
-      padding: 7px 14px;
+      padding: 7px 12px;
       font: inherit;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 500;
       cursor: pointer;
       border-radius: 999px;
+      text-decoration: none;
     }
-    .chip:hover, .chip.is-on { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
     a.chip { display: inline-flex; align-items: center; }
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 40px 0 24px; }
+    .chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); text-decoration: none; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 36px 0 8px; }
     .tile {
+      position: relative;
       background: var(--card);
       border: 1px solid var(--line);
       overflow: hidden;
       border-radius: 16px;
       color: inherit;
       cursor: zoom-in;
+      text-decoration: none;
       transition: border-color .2s, transform .2s, box-shadow .2s;
     }
     .tile:hover {
@@ -120,12 +140,27 @@
       box-shadow: 0 12px 40px rgba(0,0,0,.35);
       text-decoration: none;
     }
-    .tile img { height: 200px; width: 100%; object-fit: cover; object-position: top; }
+    .tile img { height: 168px; width: 100%; object-fit: cover; object-position: top; }
+    .tile .num {
+      position: absolute; top: 10px; left: 10px;
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent); color: #111; font-size: 11px; font-weight: 800;
+      border-radius: 8px;
+    }
     .tile .meta { padding: 14px 16px 16px; }
     .tile .tag { color: var(--accent); font-size: 10px; font-weight: 650; letter-spacing: 0.14em; text-transform: uppercase; }
     .tile h3 { margin: 6px 0 4px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
     .tile p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.55; }
     section.mod { padding: 64px 0; border-top: 1px solid var(--line); }
+    .step-kicker {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
     .mod h2 { font-size: 26px; margin: 0 0 10px; font-weight: 700; letter-spacing: -0.02em; }
     .mod .why { color: var(--muted); margin: 0 0 22px; max-width: 760px; }
     .shot {
@@ -143,6 +178,10 @@
       border-left: 3px solid var(--accent);
       padding-left: 12px;
     }
+    .next {
+      margin-top: 18px;
+      font-size: 13px;
+    }
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
     .card {
       background: var(--card);
@@ -153,28 +192,40 @@
     .card h3 { margin: 0 0 8px; font-size: 15px; }
     .card p { margin: 0; color: var(--muted); font-size: 13px; }
     .fa { font-family: Vazirmatn, Inter, sans-serif; direction: rtl; }
+    .fa .note { border-left: none; border-right: 3px solid var(--accent); padding-left: 0; padding-right: 12px; }
     footer { border-top: 1px solid var(--line); padding: 40px 0 64px; color: var(--muted); font-size: 13px; }
     #lightbox {
       display: none; position: fixed; inset: 0; z-index: 100;
       background: rgba(0,0,0,.94);
       overflow: auto;
-      padding: 28px 12px 48px;
       cursor: zoom-out;
     }
     #lightbox.open { display: block; }
+    #lbbar {
+      position: sticky; top: 0;
+      display: flex; justify-content: space-between; gap: 12px; align-items: center;
+      padding: 14px 20px;
+      background: rgba(7, 9, 13, 0.92);
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    #lbbar b { color: var(--text); }
     #lightbox img {
       width: min(96vw, 1280px);
-      max-width: none;
       height: auto;
-      margin: 0 auto;
+      margin: 20px auto 48px;
       border-radius: 10px;
+    }
+    @media (max-width: 1100px) {
+      .journey { grid-template-columns: repeat(6, minmax(0, 1fr)); }
     }
     @media (max-width: 900px) {
       .stats, .gallery, .cards { grid-template-columns: 1fr 1fr; }
       h1 { max-width: none; }
     }
     @media (max-width: 560px) {
-      .stats, .gallery, .cards { grid-template-columns: 1fr; }
+      .stats, .gallery, .cards, .journey { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -190,21 +241,31 @@
           <path d="M3 24.5h6.2l2.6-4.4 3.4 8 3-5.2 2.2 1.6H29" stroke="#5eead4" stroke-width="2.2" />
         </svg>
       </div>
-      <p class="kicker">AftabPulse · Solar fleet monitoring · Demo catalog</p>
-      <h1>Full-page product tour — fictional sample fleet</h1>
+      <p class="kicker">AftabPulse · 11-screen product tour · Demo catalog</p>
+      <h1>Sign in, command the fleet, then drill into live HMI</h1>
       <p class="lede">
-        AftabPulse is an on-prem Persian RTL console for Huawei SmartLogger 3000 fleets.
-        Every screenshot below is a <strong>complete page</strong> (scroll the frame or click to zoom).
-        Names, cities, IPs, and energy figures are a <strong>demo dataset</strong> — not a customer site.
+        Numbered tour of an on-prem Persian RTL console for Huawei SmartLogger 3000.
+        Each frame is a <strong>full page</strong>. Data is a <strong>fictional sample fleet</strong> — not a customer site.
       </p>
       <div class="banner">
-        <div>
-          <b>Anonymized demo.</b>
-          Plants are labeled آفتاب ۱, دشت روشن, کویر نمونه, پردیس نور, رینگ شرق.
-          Cities are generic solar regions (Yazd, Kerman, Isfahan). Logger hosts are documentation IPs (<span dir="ltr">10.80.x.x</span>).
-          No real company, plant, or OT address is shown.
-        </div>
+        <b>Anonymized demo.</b>
+        Plants: آفتاب ۱, دشت روشن, کویر نمونه, پردیس نور, رینگ شرق.
+        Cities: Yazd, Kerman, Isfahan.
+        Logger hosts: <span dir="ltr">10.80.x.x</span>. No real company or OT address.
       </div>
+      <nav class="journey" aria-label="Product tour">
+        <a href="#s-01"><small>01</small><span>Sign-in</span></a>
+        <a href="#s-02"><small>02</small><span>Command</span></a>
+        <a href="#s-03"><small>03</small><span>Map zoom</span></a>
+        <a href="#s-04"><small>04</small><span>Plants</span></a>
+        <a href="#s-05"><small>05</small><span>Plant</span></a>
+        <a href="#s-06"><small>06</small><span>Live HMI</span></a>
+        <a href="#s-07"><small>07</small><span>Reports</span></a>
+        <a href="#s-08"><small>08</small><span>Alerts</span></a>
+        <a href="#s-09"><small>09</small><span>Portals</span></a>
+        <a href="#s-10"><small>10</small><span>Users</span></a>
+        <a href="#s-11"><small>11</small><span>Audit</span></a>
+      </nav>
       <div class="stats">
         <div class="stat"><b>~42 MW</b><span>Demo live power</span></div>
         <div class="stat"><b>66 MWp</b><span>Sample nameplate</span></div>
@@ -216,12 +277,13 @@
 
   <nav class="toc">
     <div class="wrap">
-      <button class="chip is-on" type="button" data-filter="all">All</button>
-      <button class="chip" type="button" data-filter="ops">Command</button>
-      <button class="chip" type="button" data-filter="fleet">Fleet</button>
-      <button class="chip" type="button" data-filter="hmi">Live HMI</button>
-      <button class="chip" type="button" data-filter="intel">Reports</button>
-      <button class="chip" type="button" data-filter="admin">Access</button>
+      <a class="chip" href="#s-01">01 Sign-in</a>
+      <a class="chip" href="#s-02">02 Command</a>
+      <a class="chip" href="#s-04">04 Plants</a>
+      <a class="chip" href="#s-06">06 HMI</a>
+      <a class="chip" href="#s-07">07 Reports</a>
+      <a class="chip" href="#s-08">08 Alerts</a>
+      <a class="chip" href="#s-10">10 Users</a>
       <a class="chip" href="https://github.com/ramincsy/solar-monitoring-showcase">GitHub</a>
     </div>
   </nav>
@@ -230,52 +292,117 @@
     <div class="gallery" id="grid"></div>
   </div>
 
-  <section class="mod" id="command">
+  <section class="mod" id="s-01">
     <div class="wrap">
-      <h2>Command center — full operations screen</h2>
-      <p class="why">KPIs, attention queue, city ranking, and the Iran map on one page. Live megawatts are online loggers only.</p>
-      <div class="shot" data-full="shots/02-command.png"><img src="shots/02-command.png" alt="Full command center page with demo KPIs and Iran map" /></div>
-      <p class="note">Sample cities: Yazd (online), Isfahan (online), Kerman (alarm). Click the image to zoom and scroll.</p>
-      <div class="shot" style="margin-top:16px" data-full="shots/03-map.png"><img src="shots/03-map.png" alt="Command center after map zoom on the demo northwest-central corridor" /></div>
+      <p class="step-kicker">01 / 11 · Access</p>
+      <h2>Sign-in — the operator enters the console</h2>
+      <p class="why">The tour starts where the shift starts: branded RTL login, demo credentials, and the four jobs the console is built for — map, live power, roles, and alerts.</p>
+      <div class="shot" data-full="shots/01-login.png"><img src="shots/01-login.png" alt="01 — Full AftabPulse login page" /></div>
+      <p class="note">Catalog login is a demo account only (admin / Admin@1234). It is not a customer identity store.</p>
+      <p class="next"><a href="#s-02">Next · 02 Command center →</a></p>
     </div>
   </section>
 
-  <section class="mod" id="fleet">
+  <section class="mod" id="s-02">
     <div class="wrap">
-      <h2>Plants — every project card on one page</h2>
-      <p class="why">The full plant directory: city chips, districts, logger cards, AC/DC power, and health. Nothing cropped off the bottom.</p>
-      <div class="shot" data-full="shots/04-plants.png"><img src="shots/04-plants.png" alt="Full plants page with all demo sites and SmartLogger cards" /></div>
-      <p class="note">Isfahan, Kerman, and Yazd sample sites. Hosts are 10.80.10–30.x — not a live OT LAN.</p>
-      <div class="shot" style="margin-top:16px" data-full="shots/05-plant.png"><img src="shots/05-plant.png" alt="Full plant detail with gauges, charts, and logger table" /></div>
+      <p class="step-kicker">02 / 11 · Operations</p>
+      <h2>Command center — national map, KPIs, attention</h2>
+      <p class="why">After login, leadership lands here: live MW, today and month energy, logger availability, city ranking, and an ISA-style attention list. Offline plants do not fake green on the map.</p>
+      <div class="shot" data-full="shots/02-command.png"><img src="shots/02-command.png" alt="02 — Full command center with demo KPIs and Iran map" /></div>
+      <p class="note">Sample cities: Yazd and Isfahan online, Kerman in alarm. Live MW is online loggers only.</p>
+      <p class="next"><a href="#s-03">Next · 03 Map zoom →</a></p>
     </div>
   </section>
 
-  <section class="mod" id="hmi">
+  <section class="mod" id="s-03">
     <div class="wrap">
-      <h2>Live HMI — gauges, phases, and 24-hour trends</h2>
-      <p class="why">The SmartLogger live board in full: power, efficiency, loading, PF, AC/DC, three-phase, inverter notes, and energy curves.</p>
-      <div class="shot" data-full="shots/06-live-hmi.png"><img src="shots/06-live-hmi.png" alt="Full SmartLogger live HMI page with all charts" /></div>
-      <p class="note">Values are generated for the catalog. The product itself reads Huawei registers and never writes to the device.</p>
+      <p class="step-kicker">03 / 11 · Operations</p>
+      <h2>Map zoom — city name and live megawatts</h2>
+      <p class="why">Same command screen after zoom. One pin per producing city. The green figure is live megawatts, not nameplate.</p>
+      <div class="shot" data-full="shots/03-map.png"><img src="shots/03-map.png" alt="03 — Command center after map zoom" /></div>
+      <p class="next"><a href="#s-04">Next · 04 Plant directory →</a></p>
     </div>
   </section>
 
-  <section class="mod" id="intel">
+  <section class="mod" id="s-04">
     <div class="wrap">
-      <h2>Reports — trend, donut, ranking, compare, tables</h2>
-      <p class="why">The complete reports surface: 24-hour live-power curve, logger health, plant bars, live vs nameplate, daily energy, plant summary, and logger table.</p>
-      <div class="shot" data-full="shots/07-reports.png"><img src="shots/07-reports.png" alt="Full reports page with all charts and tables" /></div>
-      <div class="shot" style="margin-top:16px" data-full="shots/08-alerts.png"><img src="shots/08-alerts.png" alt="Full alerts page with demo comms events" /></div>
-      <div class="shot" style="margin-top:16px" data-full="shots/09-links.png"><img src="shots/09-links.png" alt="Full logger portal links page with demo SmartLogger and SCADA cards" /></div>
+      <p class="step-kicker">04 / 11 · Fleet</p>
+      <h2>Plants — every project card, uncropped</h2>
+      <p class="why">From the map, the operator opens the portfolio: city chips, districts, logger cards, AC/DC power, and health for all five demo sites.</p>
+      <div class="shot" data-full="shots/04-plants.png"><img src="shots/04-plants.png" alt="04 — Full plants page with all demo sites" /></div>
+      <p class="note">Hosts are 10.80.10–30.x — documentation addresses, not a live OT LAN.</p>
+      <p class="next"><a href="#s-05">Next · 05 Plant detail →</a></p>
     </div>
   </section>
 
-  <section class="mod" id="admin">
+  <section class="mod" id="s-05">
     <div class="wrap">
-      <h2>Sign-in, users, and audit — demo accounts only</h2>
-      <p class="why">Role-ready console. Catalog users are admin / ops / analyst / viewer on demo.aftabpulse.local. Audit IPs are documentation range 192.0.2.x.</p>
-      <div class="shot" data-full="shots/01-login.png"><img src="shots/01-login.png" alt="Full AftabPulse login page" /></div>
-      <div class="shot" style="margin-top:16px" data-full="shots/10-users.png"><img src="shots/10-users.png" alt="Full users page with demo roles" /></div>
-      <div class="shot" style="margin-top:16px" data-full="shots/11-audit.png"><img src="shots/11-audit.png" alt="Full audit log with demo events" /></div>
+      <p class="step-kicker">05 / 11 · Fleet</p>
+      <h2>Plant detail — one project, all loggers</h2>
+      <p class="why">A single sample plant (آفتاب ۱, Yazd) with live gauges, energy tiles, phase charts, 24-hour trends, and the logger table at the bottom.</p>
+      <div class="shot" data-full="shots/05-plant.png"><img src="shots/05-plant.png" alt="05 — Full plant detail page" /></div>
+      <p class="next"><a href="#s-06">Next · 06 Live HMI →</a></p>
+    </div>
+  </section>
+
+  <section class="mod" id="s-06">
+    <div class="wrap">
+      <p class="step-kicker">06 / 11 · Live HMI</p>
+      <h2>Live SmartLogger — industrial gauges to the last chart</h2>
+      <p class="why">The device board: active power, efficiency, loading, power factor, AC/DC, three-phase, inverter notes, and energy curves. The product reads Huawei registers and never writes.</p>
+      <div class="shot" data-full="shots/06-live-hmi.png"><img src="shots/06-live-hmi.png" alt="06 — Full SmartLogger live HMI" /></div>
+      <p class="note">Figures on this page are generated for the catalog. In production they come from Modbus.</p>
+      <p class="next"><a href="#s-07">Next · 07 Reports →</a></p>
+    </div>
+  </section>
+
+  <section class="mod" id="s-07">
+    <div class="wrap">
+      <p class="step-kicker">07 / 11 · Intelligence</p>
+      <h2>Reports — 24-hour trend, ranking, compare, tables</h2>
+      <p class="why">The analyst surface in full: live-power curve, logger-health donut, plant bars, live vs nameplate, daily energy, plant summary, and the logger table with CSV export.</p>
+      <div class="shot" data-full="shots/07-reports.png"><img src="shots/07-reports.png" alt="07 — Full reports page with all charts and tables" /></div>
+      <p class="next"><a href="#s-08">Next · 08 Alerts →</a></p>
+    </div>
+  </section>
+
+  <section class="mod" id="s-08">
+    <div class="wrap">
+      <p class="step-kicker">08 / 11 · Operations</p>
+      <h2>Alerts — comms loss and degraded link</h2>
+      <p class="why">ISA-style queue: critical on top, acknowledge and close. Sample events only — “demo logger offline”, not a customer ticket.</p>
+      <div class="shot" data-full="shots/08-alerts.png"><img src="shots/08-alerts.png" alt="08 — Full alerts page" /></div>
+      <p class="next"><a href="#s-09">Next · 09 Logger portals →</a></p>
+    </div>
+  </section>
+
+  <section class="mod" id="s-09">
+    <div class="wrap">
+      <p class="step-kicker">09 / 11 · Devices</p>
+      <h2>Logger portals — SmartLogger web and demo SCADA</h2>
+      <p class="why">A link shelf so operators do not hunt bookmarks: sample SmartLogger pages and a fictional Farscada card.</p>
+      <div class="shot" data-full="shots/09-links.png"><img src="shots/09-links.png" alt="09 — Full logger portal links page" /></div>
+      <p class="next"><a href="#s-10">Next · 10 Users →</a></p>
+    </div>
+  </section>
+
+  <section class="mod" id="s-10">
+    <div class="wrap">
+      <p class="step-kicker">10 / 11 · Administration</p>
+      <h2>Users — viewer to super-admin</h2>
+      <p class="why">Four demo roles on demo.aftabpulse.local. No real names or corporate emails.</p>
+      <div class="shot" data-full="shots/10-users.png"><img src="shots/10-users.png" alt="10 — Full users page" /></div>
+      <p class="next"><a href="#s-11">Next · 11 Audit →</a></p>
+    </div>
+  </section>
+
+  <section class="mod" id="s-11">
+    <div class="wrap">
+      <p class="step-kicker">11 / 11 · Administration</p>
+      <h2>Audit — who signed in, what changed</h2>
+      <p class="why">The tour ends on the trail: catalog seed, demo login, sample alert ack. IPs are RFC 5737 documentation range (192.0.2.x).</p>
+      <div class="shot" data-full="shots/11-audit.png"><img src="shots/11-audit.png" alt="11 — Full audit log" /></div>
+      <p class="note">End of the operator path: access → command → fleet → HMI → reports → alerts → admin.</p>
     </div>
   </section>
 
@@ -302,96 +429,91 @@
 
   <section class="mod" id="fa">
     <div class="wrap fa">
-      <h2>آفتاب‌پالس — کاتالوگ دمو</h2>
-      <p class="why">
-        اسکرین‌ها <b>صفحهٔ کامل</b> هستند (نمودارها و جدول‌ها برش نخورده‌اند).
-        نام نیروگاه‌ها، شهرها و IPها <b>نمونهٔ نمایشی</b>اند تا اطلاعات مشتری لو نرود.
-      </p>
+      <h2>آفتاب‌پالس — تور ۱۱ صفحه‌ای</h2>
+      <p class="why">ترتیب کاتالوگ همان مسیر اپراتور است: ورود → مرکز فرمان → نقشه → نیروگاه‌ها → جزئیات → HMI زنده → گزارش → هشدار → پورتال → کاربران → حسابرسی.</p>
       <div class="cards">
-        <div class="card"><h3>مرکز فرمان</h3><p>نقشه ایران، KPI و فهرست توجه روی یک صفحهٔ کامل.</p></div>
-        <div class="card"><h3>HMI زنده</h3><p>گیج‌ها، فازها، روند ۲۴ ساعته و جدول لاگر تا پایین صفحه.</p></div>
-        <div class="card"><h3>گزارش</h3><p>منحنی توان، دونات سلامت، رتبهٔ تولید و جداول کامل.</p></div>
+        <div class="card"><h3>۰۱–۰۳</h3><p>ورود، مرکز فرمان و زوم نقشه با توان زنده.</p></div>
+        <div class="card"><h3>۰۴–۰۶</h3><p>فهرست نیروگاه، صفحهٔ پروژه و گیج‌های اسمارت‌لاگر.</p></div>
+        <div class="card"><h3>۰۷–۱۱</h3><p>گزارش کامل، هشدار، لینک دستگاه، نقش و audit.</p></div>
       </div>
+      <p class="note">اسکرین‌ها صفحهٔ کامل‌اند. نام‌ها و IPها نمونهٔ نمایشی‌اند تا دادهٔ مشتری لو نرود.</p>
     </div>
   </section>
 
   <footer>
     <div class="wrap">
-      Screens are a <strong>fictional demo fleet</strong> captured for this public window.
-      Implementation stays private. Same catalog pattern as
+      Screens are a <strong>fictional demo fleet</strong> in a numbered product tour.
+      Implementation stays private. Same public-window pattern as
       <a href="https://ramincsy.github.io/atlas-showcase/">Atlas</a> and
       <a href="https://ramincsy.github.io/taradod-nexus-showcase/">Taradod Nexus</a>.<br />
       © ramioo · <a href="https://www.ramioo.com">ramioo.com</a>
       · <a href="https://github.com/ramincsy/solar-monitoring-showcase">GitHub</a>
       · <a href="mailto:ramincsywork@gmail.com">ramincsywork@gmail.com</a>
       · <a href="tel:+989146665068">0914 666 50 68</a>
-      <p style="margin:12px 0 0">Click any frame to zoom and scroll the full page · Esc to close · ← → to step.</p>
+      <p style="margin:12px 0 0">Click a frame to zoom · scroll the full page · ← → follows tour order · Esc to close.</p>
     </div>
   </footer>
 
-  <div id="lightbox" role="dialog" aria-label="Full page screenshot"><img alt="" /></div>
+  <div id="lightbox" role="dialog" aria-label="Full page screenshot">
+    <div id="lbbar"><span id="lbstep"></span><b id="lbtitle"></b><span>Esc · ← →</span></div>
+    <img alt="" />
+  </div>
 
   <script>
     const shots = [
-      { src: "shots/02-command.png", cat: "ops", tag: "OPS", title: "Command center", desc: "Full page · KPIs, map, attention" },
-      { src: "shots/03-map.png", cat: "ops", tag: "MAP", title: "Map zoom", desc: "Full page after zoom" },
-      { src: "shots/04-plants.png", cat: "fleet", tag: "FLEET", title: "All plants", desc: "Complete directory · 5 demo sites" },
-      { src: "shots/05-plant.png", cat: "fleet", tag: "PLANT", title: "Plant detail", desc: "Gauges, charts, logger table" },
-      { src: "shots/06-live-hmi.png", cat: "hmi", tag: "HMI", title: "Live SmartLogger", desc: "Full HMI · phases & trends" },
-      { src: "shots/07-reports.png", cat: "intel", tag: "REPORTS", title: "Reports", desc: "All charts and tables" },
-      { src: "shots/08-alerts.png", cat: "intel", tag: "ALERTS", title: "Alerts", desc: "Demo comms events" },
-      { src: "shots/09-links.png", cat: "intel", tag: "LINKS", title: "Logger portals", desc: "Demo SmartLogger & SCADA" },
-      { src: "shots/01-login.png", cat: "admin", tag: "ACCESS", title: "Sign-in", desc: "Full login page" },
-      { src: "shots/10-users.png", cat: "admin", tag: "ADMIN", title: "Users", desc: "Demo roles only" },
-      { src: "shots/11-audit.png", cat: "admin", tag: "AUDIT", title: "Audit trail", desc: "Documentation IPs" }
+      { n: "01", src: "shots/01-login.png", tag: "ACCESS", title: "Sign-in", desc: "Where the shift starts" },
+      { n: "02", src: "shots/02-command.png", tag: "OPS", title: "Command center", desc: "KPIs, map, attention queue" },
+      { n: "03", src: "shots/03-map.png", tag: "MAP", title: "Map zoom", desc: "City name + live MW" },
+      { n: "04", src: "shots/04-plants.png", tag: "FLEET", title: "Plant directory", desc: "Five demo sites, uncropped" },
+      { n: "05", src: "shots/05-plant.png", tag: "PLANT", title: "Plant detail", desc: "Gauges, charts, logger table" },
+      { n: "06", src: "shots/06-live-hmi.png", tag: "HMI", title: "Live SmartLogger", desc: "Phases, PF, 24-hour trends" },
+      { n: "07", src: "shots/07-reports.png", tag: "REPORTS", title: "Reports", desc: "Trend, donut, ranking, CSV" },
+      { n: "08", src: "shots/08-alerts.png", tag: "ALERTS", title: "Alerts", desc: "Comms loss and degraded link" },
+      { n: "09", src: "shots/09-links.png", tag: "LINKS", title: "Logger portals", desc: "SmartLogger & demo SCADA" },
+      { n: "10", src: "shots/10-users.png", tag: "ADMIN", title: "Users", desc: "Four demo roles" },
+      { n: "11", src: "shots/11-audit.png", tag: "AUDIT", title: "Audit trail", desc: "Who signed in, what changed" }
     ];
     const grid = document.getElementById("grid");
     grid.innerHTML = shots.map((s) => `
-      <article class="tile" data-cat="${s.cat}" data-full="${s.src}">
-        <img src="${s.src}" alt="${s.title}" />
+      <a class="tile" href="#s-${s.n}" data-full="${s.src}">
+        <span class="num">${s.n}</span>
+        <img src="${s.src}" alt="${s.n} — ${s.title}" />
         <div class="meta">
           <div class="tag">${s.tag}</div>
-          <h3>${s.title}</h3>
+          <h3>${s.n} · ${s.title}</h3>
           <p>${s.desc}</p>
         </div>
-      </article>`).join("");
-
-    const chips = document.querySelectorAll(".chip[data-filter]");
-    const tiles = () => document.querySelectorAll(".tile");
-    chips.forEach((chip) => {
-      chip.addEventListener("click", () => {
-        chips.forEach((c) => c.classList.remove("is-on"));
-        chip.classList.add("is-on");
-        const f = chip.dataset.filter;
-        tiles().forEach((t) => { t.style.display = f === "all" || t.dataset.cat === f ? "" : "none"; });
-      });
-    });
+      </a>`).join("");
 
     const lb = document.getElementById("lightbox");
     const lbImg = lb.querySelector("img");
+    const lbStep = document.getElementById("lbstep");
+    const lbTitle = document.getElementById("lbtitle");
     let idx = 0;
-    function openLb(src) {
-      idx = Math.max(0, shots.findIndex((s) => s.src === src));
-      lbImg.src = src;
-      lb.classList.add("open");
+    function show(i) {
+      idx = (i + shots.length) % shots.length;
+      const s = shots[idx];
+      lbImg.src = s.src;
+      lbImg.alt = s.title;
+      lbStep.textContent = s.n + " / 11";
+      lbTitle.textContent = s.title;
       lb.scrollTop = 0;
+    }
+    function openLb(src) {
+      show(Math.max(0, shots.findIndex((s) => s.src === src)));
+      lb.classList.add("open");
     }
     function closeLb() { lb.classList.remove("open"); lbImg.src = ""; }
-    function step(d) {
-      if (!lb.classList.contains("open")) return;
-      idx = (idx + d + shots.length) % shots.length;
-      lbImg.src = shots[idx].src;
-      lb.scrollTop = 0;
-    }
     document.body.addEventListener("click", (e) => {
       const t = e.target.closest("[data-full]");
-      if (t) { openLb(t.getAttribute("data-full")); return; }
+      if (t) { e.preventDefault(); openLb(t.getAttribute("data-full")); return; }
       if (e.target === lb || e.target === lbImg) closeLb();
     });
     document.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("open")) return;
       if (e.key === "Escape") closeLb();
-      if (e.key === "ArrowRight") step(1);
-      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") show(idx + 1);
+      if (e.key === "ArrowLeft") show(idx - 1);
     });
   </script>
 </body>
