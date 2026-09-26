@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AftabPulse — Product Catalog | Solar Fleet Monitoring</title>
-  <meta name="description" content="AftabPulse is an on-prem operations console for Huawei SmartLogger solar fleets in Iran — live power, Iran map, plant HMI, and reports." />
+  <meta name="description" content="Public demo catalog of AftabPulse — on-prem Huawei SmartLogger solar fleet monitoring. Screens use a fictional sample fleet; no customer sites or device IPs." />
   <meta name="theme-color" content="#0c1018" />
   <link rel="icon" type="image/svg+xml" href="brand-mark.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,20 +36,27 @@
     a { color: var(--accent2); text-decoration: none; }
     a:hover { text-decoration: underline; }
     img { max-width: 100%; display: block; }
-    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .wrap { width: min(1180px, calc(100% - 36px)); margin-inline: auto; }
+    .banner {
+      display: flex; gap: 14px; align-items: flex-start;
+      margin: 0 0 32px;
+      padding: 14px 16px;
+      border: 1px solid rgba(94, 234, 212, 0.28);
+      background: rgba(94, 234, 212, 0.06);
+      border-radius: 14px;
+      color: var(--text);
+      font-size: 13.5px;
+    }
+    .banner b { color: var(--accent2); }
     header.hero {
-      padding: 96px 0 64px;
+      padding: 88px 0 56px;
       border-bottom: 1px solid var(--line);
       background:
         radial-gradient(900px 420px at 12% -20%, rgba(245, 158, 11, 0.16), transparent 55%),
         radial-gradient(700px 360px at 95% 0%, rgba(94, 234, 212, 0.10), transparent 50%),
         var(--bg2);
     }
-    .brand {
-      display: flex; align-items: center; gap: 12px;
-      margin: 0 0 28px;
-      color: var(--accent);
-    }
+    .brand { display: flex; align-items: center; gap: 12px; margin: 0 0 28px; color: var(--accent); }
     .brand svg { width: 36px; height: 36px; }
     .kicker {
       color: var(--accent);
@@ -65,15 +72,9 @@
       margin: 0 0 18px;
       font-weight: 700;
       letter-spacing: -0.03em;
-      max-width: 18ch;
+      max-width: 20ch;
     }
-    .lede {
-      color: var(--muted);
-      font-size: 16.5px;
-      line-height: 1.75;
-      max-width: 640px;
-      margin: 0 0 36px;
-    }
+    .lede { color: var(--muted); font-size: 16.5px; line-height: 1.75; max-width: 680px; margin: 0 0 28px; }
     .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
     .stat {
       background: var(--card);
@@ -102,12 +103,8 @@
       border-radius: 999px;
     }
     .chip:hover, .chip.is-on { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      padding: 40px 0 24px;
-    }
+    a.chip { display: inline-flex; align-items: center; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 40px 0 24px; }
     .tile {
       background: var(--card);
       border: 1px solid var(--line);
@@ -123,23 +120,22 @@
       box-shadow: 0 12px 40px rgba(0,0,0,.35);
       text-decoration: none;
     }
-    .tile img { height: 168px; width: 100%; object-fit: cover; object-position: top; }
+    .tile img { height: 200px; width: 100%; object-fit: cover; object-position: top; }
     .tile .meta { padding: 14px 16px 16px; }
     .tile .tag { color: var(--accent); font-size: 10px; font-weight: 650; letter-spacing: 0.14em; text-transform: uppercase; }
     .tile h3 { margin: 6px 0 4px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
     .tile p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.55; }
-    section.mod { padding: 72px 0; border-top: 1px solid var(--line); }
+    section.mod { padding: 64px 0; border-top: 1px solid var(--line); }
     .mod h2 { font-size: 26px; margin: 0 0 10px; font-weight: 700; letter-spacing: -0.02em; }
-    .mod .why { color: var(--muted); margin: 0 0 28px; max-width: 680px; }
+    .mod .why { color: var(--muted); margin: 0 0 22px; max-width: 760px; }
     .shot {
       border: 1px solid var(--line);
       border-radius: 16px;
       overflow: hidden;
-      background: #000;
+      background: #05070b;
       cursor: zoom-in;
     }
-    .shot img { width: 100%; }
-    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .shot img { width: 100%; height: auto; }
     .note {
       margin-top: 14px;
       color: var(--muted);
@@ -157,25 +153,28 @@
     .card h3 { margin: 0 0 8px; font-size: 15px; }
     .card p { margin: 0; color: var(--muted); font-size: 13px; }
     .fa { font-family: Vazirmatn, Inter, sans-serif; direction: rtl; }
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 40px 0 64px;
-      color: var(--muted);
-      font-size: 13px;
-    }
+    footer { border-top: 1px solid var(--line); padding: 40px 0 64px; color: var(--muted); font-size: 13px; }
     #lightbox {
       display: none; position: fixed; inset: 0; z-index: 100;
-      background: rgba(0,0,0,.92); align-items: center; justify-content: center;
-      padding: 24px; cursor: zoom-out;
+      background: rgba(0,0,0,.94);
+      overflow: auto;
+      padding: 28px 12px 48px;
+      cursor: zoom-out;
     }
-    #lightbox.open { display: flex; }
-    #lightbox img { max-width: min(96vw, 1480px); max-height: 92vh; border-radius: 10px; }
+    #lightbox.open { display: block; }
+    #lightbox img {
+      width: min(96vw, 1280px);
+      max-width: none;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
     @media (max-width: 900px) {
-      .stats, .gallery, .cards, .grid2 { grid-template-columns: 1fr 1fr; }
+      .stats, .gallery, .cards { grid-template-columns: 1fr 1fr; }
       h1 { max-width: none; }
     }
     @media (max-width: 560px) {
-      .stats, .gallery, .cards, .grid2 { grid-template-columns: 1fr; }
+      .stats, .gallery, .cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -191,19 +190,26 @@
           <path d="M3 24.5h6.2l2.6-4.4 3.4 8 3-5.2 2.2 1.6H29" stroke="#5eead4" stroke-width="2.2" />
         </svg>
       </div>
-      <p class="kicker">AftabPulse · Solar fleet monitoring</p>
-      <h1>Command the solar fleet — live MW on the map of Iran</h1>
+      <p class="kicker">AftabPulse · Solar fleet monitoring · Demo catalog</p>
+      <h1>Full-page product tour — fictional sample fleet</h1>
       <p class="lede">
-        AftabPulse is an on-prem operations console for multi-site photovoltaic plants.
-        It reads Huawei SmartLogger 3000 over Modbus, shows honest live power, and keeps
-        operators on one Persian RTL screen — command center, plant HMI, and reports.
-        This catalog is the public product window.
+        AftabPulse is an on-prem Persian RTL console for Huawei SmartLogger 3000 fleets.
+        Every screenshot below is a <strong>complete page</strong> (scroll the frame or click to zoom).
+        Names, cities, IPs, and energy figures are a <strong>demo dataset</strong> — not a customer site.
       </p>
+      <div class="banner">
+        <div>
+          <b>Anonymized demo.</b>
+          Plants are labeled آفتاب ۱, دشت روشن, کویر نمونه, پردیس نور, رینگ شرق.
+          Cities are generic solar regions (Yazd, Kerman, Isfahan). Logger hosts are documentation IPs (<span dir="ltr">10.80.x.x</span>).
+          No real company, plant, or OT address is shown.
+        </div>
+      </div>
       <div class="stats">
-        <div class="stat"><b>~48 MW</b><span>Live fleet power</span></div>
-        <div class="stat"><b>60.8 MWp</b><span>Installed capacity</span></div>
-        <div class="stat"><b>5 plants</b><span>NW Iran · Tabriz &amp; Jolfa</span></div>
-        <div class="stat"><b>Read-only</b><span>Modbus — never writes to the device</span></div>
+        <div class="stat"><b>~42 MW</b><span>Demo live power</span></div>
+        <div class="stat"><b>66 MWp</b><span>Sample nameplate</span></div>
+        <div class="stat"><b>5 plants</b><span>Yazd · Kerman · Isfahan</span></div>
+        <div class="stat"><b>Read-only</b><span>Modbus — never writes</span></div>
       </div>
     </div>
   </header>
@@ -226,70 +232,61 @@
 
   <section class="mod" id="command">
     <div class="wrap">
-      <h2>Command center — national map, KPIs, attention queue</h2>
-      <p class="why">Leadership sees which city is producing, which logger is silent, and how much of nameplate is online — without opening a vendor portal.</p>
-      <div class="shot" data-full="shots/02-command.png"><img src="shots/02-command.png" alt="AftabPulse command center with Iran map and fleet KPIs" /></div>
-      <p class="note">Live MW, today/month energy, logger availability, and an ISA-style attention list. Offline plants do not fake green on the map.</p>
-      <div class="grid2" style="margin-top:14px">
-        <div class="shot" data-full="shots/03-iran-map.png"><img src="shots/03-iran-map.png" alt="Iran map with Jolfa and Tabriz live megawatt labels" /></div>
-        <div class="shot" data-full="shots/12-map-zoom.png"><img src="shots/12-map-zoom.png" alt="Zoomed northwest Iran with city names and green MW" /></div>
-      </div>
-      <p class="note">One pin per producing city. The green figure is live megawatts, not nameplate. Zoom keeps labels readable.</p>
+      <h2>Command center — full operations screen</h2>
+      <p class="why">KPIs, attention queue, city ranking, and the Iran map on one page. Live megawatts are online loggers only.</p>
+      <div class="shot" data-full="shots/02-command.png"><img src="shots/02-command.png" alt="Full command center page with demo KPIs and Iran map" /></div>
+      <p class="note">Sample cities: Yazd (online), Isfahan (online), Kerman (alarm). Click the image to zoom and scroll.</p>
+      <div class="shot" style="margin-top:16px" data-full="shots/03-map.png"><img src="shots/03-map.png" alt="Command center after map zoom on the demo northwest-central corridor" /></div>
     </div>
   </section>
 
   <section class="mod" id="fleet">
     <div class="wrap">
-      <h2>Plants — city, district, SmartLogger card</h2>
-      <p class="why">Each project sits under a city and district, with health, AC/DC power, and a one-click jump to the device web UI.</p>
-      <div class="shot" data-full="shots/04-plants.png"><img src="shots/04-plants.png" alt="Plant list grouped by Tabriz and Jolfa" /></div>
-      <p class="note">Akhula, Salimi, Amin, Yekanat 2, and Tabriz as first-class plants — not a single “site” blob.</p>
-      <div class="shot" style="margin-top:14px" data-full="shots/05-plant.png"><img src="shots/05-plant.png" alt="Plant detail page" /></div>
+      <h2>Plants — every project card on one page</h2>
+      <p class="why">The full plant directory: city chips, districts, logger cards, AC/DC power, and health. Nothing cropped off the bottom.</p>
+      <div class="shot" data-full="shots/04-plants.png"><img src="shots/04-plants.png" alt="Full plants page with all demo sites and SmartLogger cards" /></div>
+      <p class="note">Isfahan, Kerman, and Yazd sample sites. Hosts are 10.80.10–30.x — not a live OT LAN.</p>
+      <div class="shot" style="margin-top:16px" data-full="shots/05-plant.png"><img src="shots/05-plant.png" alt="Full plant detail with gauges, charts, and logger table" /></div>
     </div>
   </section>
 
   <section class="mod" id="hmi">
     <div class="wrap">
-      <h2>Live HMI — gauges from the logger, not a slideshow</h2>
-      <p class="why">Active power, conversion efficiency, plant loading, and power factor as industrial gauges. Values come from Modbus registers on SmartLogger 3000.</p>
-      <div class="shot" data-full="shots/06-live-hmi.png"><img src="shots/06-live-hmi.png" alt="SmartLogger live board with power, efficiency, and PF gauges" /></div>
-      <p class="note">Read-only. If the logger is silent, the console says so — it does not replay yesterday as “live”.</p>
+      <h2>Live HMI — gauges, phases, and 24-hour trends</h2>
+      <p class="why">The SmartLogger live board in full: power, efficiency, loading, PF, AC/DC, three-phase, inverter notes, and energy curves.</p>
+      <div class="shot" data-full="shots/06-live-hmi.png"><img src="shots/06-live-hmi.png" alt="Full SmartLogger live HMI page with all charts" /></div>
+      <p class="note">Values are generated for the catalog. The product itself reads Huawei registers and never writes to the device.</p>
     </div>
   </section>
 
   <section class="mod" id="intel">
     <div class="wrap">
-      <h2>Reports — 24-hour trend, health donut, plant ranking</h2>
-      <p class="why">The same honesty rules as the command center: live power is online loggers only. Stale megawatts stay out of the headline KPI.</p>
-      <div class="shot" data-full="shots/07-reports.png"><img src="shots/07-reports.png" alt="Reports page with energy ranking and logger health" /></div>
-      <div class="grid2" style="margin-top:14px">
-        <div class="shot" data-full="shots/08-alerts.png"><img src="shots/08-alerts.png" alt="Alerts queue" /></div>
-        <div class="shot" data-full="shots/09-links.png"><img src="shots/09-links.png" alt="SmartLogger and Farscada portal links" /></div>
-      </div>
-      <p class="note">Alerts for comms loss; a link shelf for SmartLogger web and Farscada so operators do not hunt bookmarks.</p>
+      <h2>Reports — trend, donut, ranking, compare, tables</h2>
+      <p class="why">The complete reports surface: 24-hour live-power curve, logger health, plant bars, live vs nameplate, daily energy, plant summary, and logger table.</p>
+      <div class="shot" data-full="shots/07-reports.png"><img src="shots/07-reports.png" alt="Full reports page with all charts and tables" /></div>
+      <div class="shot" style="margin-top:16px" data-full="shots/08-alerts.png"><img src="shots/08-alerts.png" alt="Full alerts page with demo comms events" /></div>
+      <div class="shot" style="margin-top:16px" data-full="shots/09-links.png"><img src="shots/09-links.png" alt="Full logger portal links page with demo SmartLogger and SCADA cards" /></div>
     </div>
   </section>
 
   <section class="mod" id="admin">
     <div class="wrap">
-      <h2>Access, audit, and sign-in</h2>
-      <p class="why">Roles from viewer to super-admin. Every login and fleet change is written to an audit trail.</p>
-      <div class="grid2">
-        <div class="shot" data-full="shots/01-login.png"><img src="shots/01-login.png" alt="AftabPulse login" /></div>
-        <div class="shot" data-full="shots/10-users.png"><img src="shots/10-users.png" alt="User and role administration" /></div>
-      </div>
-      <div class="shot" style="margin-top:14px" data-full="shots/11-audit.png"><img src="shots/11-audit.png" alt="Audit log" /></div>
+      <h2>Sign-in, users, and audit — demo accounts only</h2>
+      <p class="why">Role-ready console. Catalog users are admin / ops / analyst / viewer on demo.aftabpulse.local. Audit IPs are documentation range 192.0.2.x.</p>
+      <div class="shot" data-full="shots/01-login.png"><img src="shots/01-login.png" alt="Full AftabPulse login page" /></div>
+      <div class="shot" style="margin-top:16px" data-full="shots/10-users.png"><img src="shots/10-users.png" alt="Full users page with demo roles" /></div>
+      <div class="shot" style="margin-top:16px" data-full="shots/11-audit.png"><img src="shots/11-audit.png" alt="Full audit log with demo events" /></div>
     </div>
   </section>
 
   <section class="mod" id="market">
     <div class="wrap">
       <h2>Where AftabPulse sits</h2>
-      <p class="why">Built for Iranian solar operators who already own Huawei SmartLogger 3000 and need a Persian control room — not another English cloud portal.</p>
+      <p class="why">Built for operators who already own Huawei SmartLogger 3000 and need a Persian control room on the plant LAN.</p>
       <div class="cards">
         <div class="card">
           <h3>vs. FusionSolar cloud</h3>
-          <p>Runs on the plant LAN, talks Modbus directly, and does not depend on the vendor cloud for the live MW figure.</p>
+          <p>Runs on the operator LAN, talks Modbus directly, and does not depend on the vendor cloud for the live MW figure.</p>
         </div>
         <div class="card">
           <h3>vs. generic SCADA</h3>
@@ -297,7 +294,7 @@
         </div>
         <div class="card">
           <h3>vs. spreadsheet ops</h3>
-          <p>One console for Tabriz and Jolfa: availability, energy today, and which logger has been quiet.</p>
+          <p>One console for a multi-city portfolio: availability, energy today, and which logger has been quiet.</p>
         </div>
       </div>
     </div>
@@ -305,50 +302,48 @@
 
   <section class="mod" id="fa">
     <div class="wrap fa">
-      <h2>آفتاب‌پالس</h2>
+      <h2>آفتاب‌پالس — کاتالوگ دمو</h2>
       <p class="why">
-        سامانهٔ پایش ناوگان نیروگاه خورشیدی روی اسمارت‌لاگر هواوی. نقشهٔ ایران، توان زنده به مگاوات،
-        صفحهٔ زندهٔ نیروگاه و گزارش روزانه — فقط خواندن از دستگاه، بدون نوشتن روی Modbus.
+        اسکرین‌ها <b>صفحهٔ کامل</b> هستند (نمودارها و جدول‌ها برش نخورده‌اند).
+        نام نیروگاه‌ها، شهرها و IPها <b>نمونهٔ نمایشی</b>اند تا اطلاعات مشتری لو نرود.
       </p>
       <div class="cards">
-        <div class="card"><h3>مرکز فرمان</h3><p>نقشه، KPI و فهرست توجه روی یک صفحه.</p></div>
-        <div class="card"><h3>HMI زنده</h3><p>گیج توان، بازده، بار و ضریب توان از رجیستر واقعی.</p></div>
-        <div class="card"><h3>گزارش</h3><p>روند ۲۴ ساعته، سلامت لاگر و رتبهٔ تولید.</p></div>
+        <div class="card"><h3>مرکز فرمان</h3><p>نقشه ایران، KPI و فهرست توجه روی یک صفحهٔ کامل.</p></div>
+        <div class="card"><h3>HMI زنده</h3><p>گیج‌ها، فازها، روند ۲۴ ساعته و جدول لاگر تا پایین صفحه.</p></div>
+        <div class="card"><h3>گزارش</h3><p>منحنی توان، دونات سلامت، رتبهٔ تولید و جداول کامل.</p></div>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="wrap">
-      Screens captured from a live AftabPulse fleet deployment in northwest Iran.
-      This repo is a public catalog only — implementation stays private.
-      Same public-window pattern as
+      Screens are a <strong>fictional demo fleet</strong> captured for this public window.
+      Implementation stays private. Same catalog pattern as
       <a href="https://ramincsy.github.io/atlas-showcase/">Atlas</a> and
       <a href="https://ramincsy.github.io/taradod-nexus-showcase/">Taradod Nexus</a>.<br />
       © ramioo · <a href="https://www.ramioo.com">ramioo.com</a>
       · <a href="https://github.com/ramincsy/solar-monitoring-showcase">GitHub</a>
       · <a href="mailto:ramincsywork@gmail.com">ramincsywork@gmail.com</a>
       · <a href="tel:+989146665068">0914 666 50 68</a>
-      <p style="margin:12px 0 0">Files: docs/index.html · docs/shots/ · click any frame to zoom · Esc to close.</p>
+      <p style="margin:12px 0 0">Click any frame to zoom and scroll the full page · Esc to close · ← → to step.</p>
     </div>
   </footer>
 
-  <div id="lightbox" role="dialog" aria-label="Screenshot"><img alt="" /></div>
+  <div id="lightbox" role="dialog" aria-label="Full page screenshot"><img alt="" /></div>
 
   <script>
     const shots = [
-      { src: "shots/02-command.png", cat: "ops", tag: "OPS", title: "Command center", desc: "KPIs, map, attention queue" },
-      { src: "shots/03-iran-map.png", cat: "ops", tag: "MAP", title: "Iran fleet map", desc: "City name + live MW" },
-      { src: "shots/12-map-zoom.png", cat: "ops", tag: "MAP", title: "Northwest zoom", desc: "Jolfa & Tabriz producing" },
-      { src: "shots/04-plants.png", cat: "fleet", tag: "FLEET", title: "Plant portfolio", desc: "City · district · logger card" },
-      { src: "shots/05-plant.png", cat: "fleet", tag: "PLANT", title: "Plant detail", desc: "One project, all loggers" },
-      { src: "shots/06-live-hmi.png", cat: "hmi", tag: "HMI", title: "Live SmartLogger", desc: "Power, efficiency, PF" },
-      { src: "shots/07-reports.png", cat: "intel", tag: "REPORTS", title: "Fleet reports", desc: "Trend, donut, ranking" },
-      { src: "shots/08-alerts.png", cat: "intel", tag: "ALERTS", title: "Alerts", desc: "Comms and production" },
-      { src: "shots/09-links.png", cat: "intel", tag: "LINKS", title: "Logger portals", desc: "SmartLogger & Farscada" },
-      { src: "shots/01-login.png", cat: "admin", tag: "ACCESS", title: "Sign-in", desc: "Role-ready console" },
-      { src: "shots/10-users.png", cat: "admin", tag: "ADMIN", title: "Users", desc: "Roles and access" },
-      { src: "shots/11-audit.png", cat: "admin", tag: "AUDIT", title: "Audit trail", desc: "Who changed what" }
+      { src: "shots/02-command.png", cat: "ops", tag: "OPS", title: "Command center", desc: "Full page · KPIs, map, attention" },
+      { src: "shots/03-map.png", cat: "ops", tag: "MAP", title: "Map zoom", desc: "Full page after zoom" },
+      { src: "shots/04-plants.png", cat: "fleet", tag: "FLEET", title: "All plants", desc: "Complete directory · 5 demo sites" },
+      { src: "shots/05-plant.png", cat: "fleet", tag: "PLANT", title: "Plant detail", desc: "Gauges, charts, logger table" },
+      { src: "shots/06-live-hmi.png", cat: "hmi", tag: "HMI", title: "Live SmartLogger", desc: "Full HMI · phases & trends" },
+      { src: "shots/07-reports.png", cat: "intel", tag: "REPORTS", title: "Reports", desc: "All charts and tables" },
+      { src: "shots/08-alerts.png", cat: "intel", tag: "ALERTS", title: "Alerts", desc: "Demo comms events" },
+      { src: "shots/09-links.png", cat: "intel", tag: "LINKS", title: "Logger portals", desc: "Demo SmartLogger & SCADA" },
+      { src: "shots/01-login.png", cat: "admin", tag: "ACCESS", title: "Sign-in", desc: "Full login page" },
+      { src: "shots/10-users.png", cat: "admin", tag: "ADMIN", title: "Users", desc: "Demo roles only" },
+      { src: "shots/11-audit.png", cat: "admin", tag: "AUDIT", title: "Audit trail", desc: "Documentation IPs" }
     ];
     const grid = document.getElementById("grid");
     grid.innerHTML = shots.map((s) => `
@@ -379,12 +374,14 @@
       idx = Math.max(0, shots.findIndex((s) => s.src === src));
       lbImg.src = src;
       lb.classList.add("open");
+      lb.scrollTop = 0;
     }
     function closeLb() { lb.classList.remove("open"); lbImg.src = ""; }
     function step(d) {
       if (!lb.classList.contains("open")) return;
       idx = (idx + d + shots.length) % shots.length;
       lbImg.src = shots[idx].src;
+      lb.scrollTop = 0;
     }
     document.body.addEventListener("click", (e) => {
       const t = e.target.closest("[data-full]");

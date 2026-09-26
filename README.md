@@ -21,7 +21,7 @@
 
 </div>
 
-> **Demo first:** the live product window is on **GitHub Pages** (click‑to‑zoom lightbox). This repo is a public catalog only — implementation stays private.
+> **Demo first:** the live product window is on **GitHub Pages** (full-page screens · click to zoom and scroll). This repo is a public catalog only — implementation stays private. Screenshots use a **fictional sample fleet** (no customer plants, orgs, or OT IPs).
 
 ---
 
@@ -45,7 +45,7 @@
 
 | Map | Live HMI | Reports |
 |:---:|:---:|:---:|
-| <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/03-iran-map.png" width="280" alt="Iran map" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/06-live-hmi.png" width="280" alt="Live HMI" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/07-reports.png" width="280" alt="Reports" /></a> |
+| <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/03-map.png" width="280" alt="Iran map" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/06-live-hmi.png" width="280" alt="Live HMI" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/07-reports.png" width="280" alt="Reports" /></a> |
 
 | Plants | Alerts | Access |
 |:---:|:---:|:---:|
@@ -55,7 +55,9 @@
 
 ## What AftabPulse is
 
-On-prem Persian/RTL console for multi-site photovoltaic plants in Iran. It **reads** Huawei SmartLogger 3000 over Modbus (never writes), shows honest live megawatts on a national map, and keeps plant HMI, alerts, and reports in one operations UI.
+On-prem Persian/RTL console for multi-site photovoltaic plants. It **reads** Huawei SmartLogger 3000 over Modbus (never writes), shows live megawatts on a national map, and keeps plant HMI, alerts, and reports in one operations UI.
+
+The public catalog is a **demo dataset** (Yazd / Kerman / Isfahan sample sites) so customer names and device addresses never appear.
 
 Surfaces in the live catalog: **Command · Map · Fleet · Live HMI · Reports · Access**
 
