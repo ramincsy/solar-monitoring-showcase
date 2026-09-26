@@ -1,34 +1,63 @@
 <div align="center">
 
-# Solar plant monitoring
+# AftabPulse
 
-Generation · health · alerts for solar sites
+**Solar fleet monitoring · Huawei SmartLogger · Iran map** — public product catalog
 
 <p>
-  <a href="https://www.ramioo.com/projects/solar-intelligence"><img src="https://img.shields.io/badge/▶%20Open%20project%20page-0A66C2?style=for-the-badge" alt="Open project page" /></a>
-  <a href="https://github.com/ramincsy/ramioo-showcase"><img src="https://img.shields.io/badge/ramioo-showcase-hub-111827?style=for-the-badge" alt="hub" /></a>
+  <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="https://img.shields.io/badge/%E2%96%B6%20Open%20live%20demo%20(GitHub%20Pages)-f59e0b?style=for-the-badge" alt="Open live demo on GitHub Pages" /></a>
 </p>
 
 <p>
-  <a href="https://www.ramioo.com/projects/solar-intelligence"><img src="docs/card.jpg" alt="Solar plant monitoring" width="860" /></a>
+  <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/02-command.png" alt="AftabPulse — solar fleet command center" width="860" /></a>
 </p>
 
-<p><a href="https://www.ramioo.com/projects/solar-intelligence">https://www.ramioo.com/projects/solar-intelligence</a></p>
+<p><a href="https://ramincsy.github.io/solar-monitoring-showcase/"><b>https://ramincsy.github.io/solar-monitoring-showcase/</b></a></p>
+
+<p>
+  <a href="https://www.ramioo.com"><img src="https://img.shields.io/badge/ramioo.com-project-111827?style=for-the-badge" alt="ramioo project" /></a>
+  <a href="https://github.com/ramincsy/ramioo-showcase"><img src="https://img.shields.io/badge/ramioo-showcase-hub-334155?style=for-the-badge" alt="showcase hub" /></a>
+</p>
 
 </div>
 
-> Public product window. Source code stays private.
-
-Interactive UI catalogs on GitHub Pages: [Atlas](https://ramincsy.github.io/atlas-showcase/) · [Taradod Nexus](https://ramincsy.github.io/taradod-nexus-showcase/)
+> **Demo first:** the live product window is on **GitHub Pages** (click‑to‑zoom lightbox). This repo is a public catalog only — implementation stays private.
 
 ---
 
-### Focus
+## Live catalog (GitHub Pages)
 
-- Live and historical generation views
-- Inverter / string health signals
-- Alerts when production or equipment drifts
-- Fit for multi-site solar portfolios
+| | |
+|:--|:--|
+| **Open demo** | [ramincsy.github.io/solar-monitoring-showcase](https://ramincsy.github.io/solar-monitoring-showcase/) |
+| What you get | Command center, Iran map with live MW, plant HMI, reports |
+| Controls | Click any shot · ← → · Esc |
+
+---
+
+## Preview
+
+<p align="center">
+  <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/02-command.png" alt="AftabPulse command center — open live catalog" width="860" /></a>
+</p>
+
+<p align="center"><b><a href="https://ramincsy.github.io/solar-monitoring-showcase/">Open the interactive catalog →</a></b></p>
+
+| Map | Live HMI | Reports |
+|:---:|:---:|:---:|
+| <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/03-iran-map.png" width="280" alt="Iran map" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/06-live-hmi.png" width="280" alt="Live HMI" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/07-reports.png" width="280" alt="Reports" /></a> |
+
+| Plants | Alerts | Access |
+|:---:|:---:|:---:|
+| <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/04-plants.png" width="280" alt="Plants" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/08-alerts.png" width="280" alt="Alerts" /></a> | <a href="https://ramincsy.github.io/solar-monitoring-showcase/"><img src="docs/shots/01-login.png" width="280" alt="Sign-in" /></a> |
+
+---
+
+## What AftabPulse is
+
+On-prem Persian/RTL console for multi-site photovoltaic plants in Iran. It **reads** Huawei SmartLogger 3000 over Modbus (never writes), shows honest live megawatts on a national map, and keeps plant HMI, alerts, and reports in one operations UI.
+
+Surfaces in the live catalog: **Command · Map · Fleet · Live HMI · Reports · Access**
 
 ---
 
@@ -36,15 +65,16 @@ Interactive UI catalogs on GitHub Pages: [Atlas](https://ramincsy.github.io/atla
 
 ### فارسی
 
-مانیتورینگ نیروگاه خورشیدی (تولید، سلامت تجهیزات، هشدار). ویترین عمومی؛ سورس خصوصی.
+این مخزن فقط یک <b>کاتالوگ عمومی</b> از رابط آفتاب‌پالس است. برای دیدن دموی تعاملی (زوم، گالری و تور محصول) به GitHub Pages بروید:
 
-صفحهٔ معرفی پروژه: <a href="https://www.ramioo.com/projects/solar-intelligence">https://www.ramioo.com/projects/solar-intelligence</a>
+<a href="https://ramincsy.github.io/solar-monitoring-showcase/"><b>مشاهده کاتالوگ زنده آفتاب‌پالس</b></a>
+
+آفتاب‌پالس پایش ناوگان نیروگاه خورشیدی است (نقشه ایران، توان زنده، HMI اسمارت‌لاگر و گزارش). سورس و جزئیات پیاده‌سازی در این مخزن منتشر نمی‌شود.
 
 </div>
 
 ---
 
-### Links
-- https://www.ramioo.com/projects/solar-intelligence
-- https://www.ramioo.com/contact · ramincsywork@gmail.com · 0914 666 50 68
-- Hub: https://github.com/ramincsy/ramioo-showcase
+**Contact:** [ramioo.com](https://www.ramioo.com) · [ramincsywork@gmail.com](mailto:ramincsywork@gmail.com) · [0914 666 50 68](tel:+989146665068)
+
+© ramioo

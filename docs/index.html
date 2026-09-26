@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AftabPulse — Product Catalog | Solar Fleet Monitoring</title>
+  <meta name="description" content="AftabPulse is an on-prem operations console for Huawei SmartLogger solar fleets in Iran — live power, Iran map, plant HMI, and reports." />
+  <meta name="theme-color" content="#0c1018" />
+  <link rel="icon" type="image/svg+xml" href="brand-mark.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #07090d;
+      --bg2: #0c1018;
+      --card: #121826;
+      --line: #1e2738;
+      --text: #eef2f8;
+      --muted: #93a0b5;
+      --accent: #f59e0b;
+      --accent2: #5eead4;
+      --accent-dim: rgba(245, 158, 11, 0.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    header.hero {
+      padding: 96px 0 64px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(900px 420px at 12% -20%, rgba(245, 158, 11, 0.16), transparent 55%),
+        radial-gradient(700px 360px at 95% 0%, rgba(94, 234, 212, 0.10), transparent 50%),
+        var(--bg2);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      margin: 0 0 28px;
+      color: var(--accent);
+    }
+    .brand svg { width: 36px; height: 36px; }
+    .kicker {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0 0 18px;
+    }
+    h1 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      margin: 0 0 18px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      max-width: 18ch;
+    }
+    .lede {
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.75;
+      max-width: 640px;
+      margin: 0 0 36px;
+    }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 16px 16px;
+    }
+    .stat b { display: block; font-size: 18px; font-weight: 700; color: var(--accent2); letter-spacing: -0.02em; }
+    .stat span { color: var(--muted); font-size: 12.5px; }
+    nav.toc {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(7, 9, 13, 0.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+    nav.toc .wrap { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 0; align-items: center; }
+    .chip {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      padding: 7px 14px;
+      font: inherit;
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 999px;
+    }
+    .chip:hover, .chip.is-on { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding: 40px 0 24px;
+    }
+    .tile {
+      background: var(--card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      border-radius: 16px;
+      color: inherit;
+      cursor: zoom-in;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .tile:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+      text-decoration: none;
+    }
+    .tile img { height: 168px; width: 100%; object-fit: cover; object-position: top; }
+    .tile .meta { padding: 14px 16px 16px; }
+    .tile .tag { color: var(--accent); font-size: 10px; font-weight: 650; letter-spacing: 0.14em; text-transform: uppercase; }
+    .tile h3 { margin: 6px 0 4px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+    .tile p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.55; }
+    section.mod { padding: 72px 0; border-top: 1px solid var(--line); }
+    .mod h2 { font-size: 26px; margin: 0 0 10px; font-weight: 700; letter-spacing: -0.02em; }
+    .mod .why { color: var(--muted); margin: 0 0 28px; max-width: 680px; }
+    .shot {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      cursor: zoom-in;
+    }
+    .shot img { width: 100%; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      border-left: 3px solid var(--accent);
+      padding-left: 12px;
+    }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 16px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 15px; }
+    .card p { margin: 0; color: var(--muted); font-size: 13px; }
+    .fa { font-family: Vazirmatn, Inter, sans-serif; direction: rtl; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 0 64px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 100;
+      background: rgba(0,0,0,.92); align-items: center; justify-content: center;
+      padding: 24px; cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: min(96vw, 1480px); max-height: 92vh; border-radius: 10px; }
+    @media (max-width: 900px) {
+      .stats, .gallery, .cards, .grid2 { grid-template-columns: 1fr 1fr; }
+      h1 { max-width: none; }
+    }
+    @media (max-width: 560px) {
+      .stats, .gallery, .cards, .grid2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <g stroke="currentColor" stroke-width="2" opacity="0.9">
+            <path d="M16 3v3.2" /><path d="M6.6 6.6l2.3 2.3" /><path d="M25.4 6.6l-2.3 2.3" />
+          </g>
+          <path d="M7 19a9 9 0 0 1 18 0" stroke="currentColor" stroke-width="2.4" />
+          <path d="M3 24.5h6.2l2.6-4.4 3.4 8 3-5.2 2.2 1.6H29" stroke="#5eead4" stroke-width="2.2" />
+        </svg>
+      </div>
+      <p class="kicker">AftabPulse · Solar fleet monitoring</p>
+      <h1>Command the solar fleet — live MW on the map of Iran</h1>
+      <p class="lede">
+        AftabPulse is an on-prem operations console for multi-site photovoltaic plants.
+        It reads Huawei SmartLogger 3000 over Modbus, shows honest live power, and keeps
+        operators on one Persian RTL screen — command center, plant HMI, and reports.
+        This catalog is the public product window.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>~48 MW</b><span>Live fleet power</span></div>
+        <div class="stat"><b>60.8 MWp</b><span>Installed capacity</span></div>
+        <div class="stat"><b>5 plants</b><span>NW Iran · Tabriz &amp; Jolfa</span></div>
+        <div class="stat"><b>Read-only</b><span>Modbus — never writes to the device</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="wrap">
+      <button class="chip is-on" type="button" data-filter="all">All</button>
+      <button class="chip" type="button" data-filter="ops">Command</button>
+      <button class="chip" type="button" data-filter="fleet">Fleet</button>
+      <button class="chip" type="button" data-filter="hmi">Live HMI</button>
+      <button class="chip" type="button" data-filter="intel">Reports</button>
+      <button class="chip" type="button" data-filter="admin">Access</button>
+      <a class="chip" href="https://github.com/ramincsy/solar-monitoring-showcase">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <div class="gallery" id="grid"></div>
+  </div>
+
+  <section class="mod" id="command">
+    <div class="wrap">
+      <h2>Command center — national map, KPIs, attention queue</h2>
+      <p class="why">Leadership sees which city is producing, which logger is silent, and how much of nameplate is online — without opening a vendor portal.</p>
+      <div class="shot" data-full="shots/02-command.png"><img src="shots/02-command.png" alt="AftabPulse command center with Iran map and fleet KPIs" /></div>
+      <p class="note">Live MW, today/month energy, logger availability, and an ISA-style attention list. Offline plants do not fake green on the map.</p>
+      <div class="grid2" style="margin-top:14px">
+        <div class="shot" data-full="shots/03-iran-map.png"><img src="shots/03-iran-map.png" alt="Iran map with Jolfa and Tabriz live megawatt labels" /></div>
+        <div class="shot" data-full="shots/12-map-zoom.png"><img src="shots/12-map-zoom.png" alt="Zoomed northwest Iran with city names and green MW" /></div>
+      </div>
+      <p class="note">One pin per producing city. The green figure is live megawatts, not nameplate. Zoom keeps labels readable.</p>
+    </div>
+  </section>
+
+  <section class="mod" id="fleet">
+    <div class="wrap">
+      <h2>Plants — city, district, SmartLogger card</h2>
+      <p class="why">Each project sits under a city and district, with health, AC/DC power, and a one-click jump to the device web UI.</p>
+      <div class="shot" data-full="shots/04-plants.png"><img src="shots/04-plants.png" alt="Plant list grouped by Tabriz and Jolfa" /></div>
+      <p class="note">Akhula, Salimi, Amin, Yekanat 2, and Tabriz as first-class plants — not a single “site” blob.</p>
+      <div class="shot" style="margin-top:14px" data-full="shots/05-plant.png"><img src="shots/05-plant.png" alt="Plant detail page" /></div>
+    </div>
+  </section>
+
+  <section class="mod" id="hmi">
+    <div class="wrap">
+      <h2>Live HMI — gauges from the logger, not a slideshow</h2>
+      <p class="why">Active power, conversion efficiency, plant loading, and power factor as industrial gauges. Values come from Modbus registers on SmartLogger 3000.</p>
+      <div class="shot" data-full="shots/06-live-hmi.png"><img src="shots/06-live-hmi.png" alt="SmartLogger live board with power, efficiency, and PF gauges" /></div>
+      <p class="note">Read-only. If the logger is silent, the console says so — it does not replay yesterday as “live”.</p>
+    </div>
+  </section>
+
+  <section class="mod" id="intel">
+    <div class="wrap">
+      <h2>Reports — 24-hour trend, health donut, plant ranking</h2>
+      <p class="why">The same honesty rules as the command center: live power is online loggers only. Stale megawatts stay out of the headline KPI.</p>
+      <div class="shot" data-full="shots/07-reports.png"><img src="shots/07-reports.png" alt="Reports page with energy ranking and logger health" /></div>
+      <div class="grid2" style="margin-top:14px">
+        <div class="shot" data-full="shots/08-alerts.png"><img src="shots/08-alerts.png" alt="Alerts queue" /></div>
+        <div class="shot" data-full="shots/09-links.png"><img src="shots/09-links.png" alt="SmartLogger and Farscada portal links" /></div>
+      </div>
+      <p class="note">Alerts for comms loss; a link shelf for SmartLogger web and Farscada so operators do not hunt bookmarks.</p>
+    </div>
+  </section>
+
+  <section class="mod" id="admin">
+    <div class="wrap">
+      <h2>Access, audit, and sign-in</h2>
+      <p class="why">Roles from viewer to super-admin. Every login and fleet change is written to an audit trail.</p>
+      <div class="grid2">
+        <div class="shot" data-full="shots/01-login.png"><img src="shots/01-login.png" alt="AftabPulse login" /></div>
+        <div class="shot" data-full="shots/10-users.png"><img src="shots/10-users.png" alt="User and role administration" /></div>
+      </div>
+      <div class="shot" style="margin-top:14px" data-full="shots/11-audit.png"><img src="shots/11-audit.png" alt="Audit log" /></div>
+    </div>
+  </section>
+
+  <section class="mod" id="market">
+    <div class="wrap">
+      <h2>Where AftabPulse sits</h2>
+      <p class="why">Built for Iranian solar operators who already own Huawei SmartLogger 3000 and need a Persian control room — not another English cloud portal.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>vs. FusionSolar cloud</h3>
+          <p>Runs on the plant LAN, talks Modbus directly, and does not depend on the vendor cloud for the live MW figure.</p>
+        </div>
+        <div class="card">
+          <h3>vs. generic SCADA</h3>
+          <p>Fleet map, city MW, honesty rules for stale telemetry, and RTL operations UX instead of a tag browser.</p>
+        </div>
+        <div class="card">
+          <h3>vs. spreadsheet ops</h3>
+          <p>One console for Tabriz and Jolfa: availability, energy today, and which logger has been quiet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mod" id="fa">
+    <div class="wrap fa">
+      <h2>آفتاب‌پالس</h2>
+      <p class="why">
+        سامانهٔ پایش ناوگان نیروگاه خورشیدی روی اسمارت‌لاگر هواوی. نقشهٔ ایران، توان زنده به مگاوات،
+        صفحهٔ زندهٔ نیروگاه و گزارش روزانه — فقط خواندن از دستگاه، بدون نوشتن روی Modbus.
+      </p>
+      <div class="cards">
+        <div class="card"><h3>مرکز فرمان</h3><p>نقشه، KPI و فهرست توجه روی یک صفحه.</p></div>
+        <div class="card"><h3>HMI زنده</h3><p>گیج توان، بازده، بار و ضریب توان از رجیستر واقعی.</p></div>
+        <div class="card"><h3>گزارش</h3><p>روند ۲۴ ساعته، سلامت لاگر و رتبهٔ تولید.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      Screens captured from a live AftabPulse fleet deployment in northwest Iran.
+      This repo is a public catalog only — implementation stays private.
+      Same public-window pattern as
+      <a href="https://ramincsy.github.io/atlas-showcase/">Atlas</a> and
+      <a href="https://ramincsy.github.io/taradod-nexus-showcase/">Taradod Nexus</a>.<br />
+      © ramioo · <a href="https://www.ramioo.com">ramioo.com</a>
+      · <a href="https://github.com/ramincsy/solar-monitoring-showcase">GitHub</a>
+      · <a href="mailto:ramincsywork@gmail.com">ramincsywork@gmail.com</a>
+      · <a href="tel:+989146665068">0914 666 50 68</a>
+      <p style="margin:12px 0 0">Files: docs/index.html · docs/shots/ · click any frame to zoom · Esc to close.</p>
+    </div>
+  </footer>
+
+  <div id="lightbox" role="dialog" aria-label="Screenshot"><img alt="" /></div>
+
+  <script>
+    const shots = [
+      { src: "shots/02-command.png", cat: "ops", tag: "OPS", title: "Command center", desc: "KPIs, map, attention queue" },
+      { src: "shots/03-iran-map.png", cat: "ops", tag: "MAP", title: "Iran fleet map", desc: "City name + live MW" },
+      { src: "shots/12-map-zoom.png", cat: "ops", tag: "MAP", title: "Northwest zoom", desc: "Jolfa & Tabriz producing" },
+      { src: "shots/04-plants.png", cat: "fleet", tag: "FLEET", title: "Plant portfolio", desc: "City · district · logger card" },
+      { src: "shots/05-plant.png", cat: "fleet", tag: "PLANT", title: "Plant detail", desc: "One project, all loggers" },
+      { src: "shots/06-live-hmi.png", cat: "hmi", tag: "HMI", title: "Live SmartLogger", desc: "Power, efficiency, PF" },
+      { src: "shots/07-reports.png", cat: "intel", tag: "REPORTS", title: "Fleet reports", desc: "Trend, donut, ranking" },
+      { src: "shots/08-alerts.png", cat: "intel", tag: "ALERTS", title: "Alerts", desc: "Comms and production" },
+      { src: "shots/09-links.png", cat: "intel", tag: "LINKS", title: "Logger portals", desc: "SmartLogger & Farscada" },
+      { src: "shots/01-login.png", cat: "admin", tag: "ACCESS", title: "Sign-in", desc: "Role-ready console" },
+      { src: "shots/10-users.png", cat: "admin", tag: "ADMIN", title: "Users", desc: "Roles and access" },
+      { src: "shots/11-audit.png", cat: "admin", tag: "AUDIT", title: "Audit trail", desc: "Who changed what" }
+    ];
+    const grid = document.getElementById("grid");
+    grid.innerHTML = shots.map((s) => `
+      <article class="tile" data-cat="${s.cat}" data-full="${s.src}">
+        <img src="${s.src}" alt="${s.title}" />
+        <div class="meta">
+          <div class="tag">${s.tag}</div>
+          <h3>${s.title}</h3>
+          <p>${s.desc}</p>
+        </div>
+      </article>`).join("");
+
+    const chips = document.querySelectorAll(".chip[data-filter]");
+    const tiles = () => document.querySelectorAll(".tile");
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("is-on"));
+        chip.classList.add("is-on");
+        const f = chip.dataset.filter;
+        tiles().forEach((t) => { t.style.display = f === "all" || t.dataset.cat === f ? "" : "none"; });
+      });
+    });
+
+    const lb = document.getElementById("lightbox");
+    const lbImg = lb.querySelector("img");
+    let idx = 0;
+    function openLb(src) {
+      idx = Math.max(0, shots.findIndex((s) => s.src === src));
+      lbImg.src = src;
+      lb.classList.add("open");
+    }
+    function closeLb() { lb.classList.remove("open"); lbImg.src = ""; }
+    function step(d) {
+      if (!lb.classList.contains("open")) return;
+      idx = (idx + d + shots.length) % shots.length;
+      lbImg.src = shots[idx].src;
+    }
+    document.body.addEventListener("click", (e) => {
+      const t = e.target.closest("[data-full]");
+      if (t) { openLb(t.getAttribute("data-full")); return; }
+      if (e.target === lb || e.target === lbImg) closeLb();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLb();
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    });
+  </script>
+</body>
+</html>
